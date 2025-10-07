@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <h1>Password Generator</h1>
+        <div class="controls">
+          <div class="control-group">
+            <label for="length">Length: <span id="lengthValue">8</span></label>
+            <div class="range-control">
+              <button class="btn-minus" id="decreaseLength">-</button>
+              <input type="range" id="length" min="4" max="32" value="8" />
+              <button class="btn-plus" id="increaseLength">+</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="uppercase" checked />
+              <span>Uppercase (A-Z)</span>
+            </label>
+          </div>
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="lowercase" checked />
+              <span>Lowercase (a-z)</span>
+            </label>
+          </div>
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="numbers" checked />
+              <span>Numbers (0-9)</span>
+            </label>
+          </div>
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="symbols" checked />
+              <span>Symbols (!@#$%)</span>
+            </label>
+          </div>
+          <button id="generate" class="btn-generate">Generate Passwords</button>
+        </div>
+      </aside>
+      <main class="passwords-area">
+        <h2>Generated Passwords</h2>
+        <div class="passwords-grid">
+          <div class="password-item">
+            <span class="password-text"
+              >Click generate to create passwords</span
+            >
+            <button class="btn-copy" data-index="0">Copy</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
