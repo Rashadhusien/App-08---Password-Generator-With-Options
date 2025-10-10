@@ -206,6 +206,15 @@ input[type="range"]::-moz-range-thumb:hover {
   transform: translateY(0);
 }
 
+.btn-generate:disabled {
+  background: #334155;
+  color: #64748b;
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+}
+
 .passwords-area {
   flex: 1;
   padding: 40px;
@@ -242,6 +251,21 @@ input[type="range"]::-moz-range-thumb:hover {
   box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }
 
+.password-new {
+  animation: fadeSlide 0.4s ease-out;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .password-text {
   flex: 1;
   font-family: "Courier New", monospace;
@@ -272,6 +296,29 @@ input[type="range"]::-moz-range-thumb:hover {
 
 .btn-copy:active {
   transform: scale(0.95);
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
